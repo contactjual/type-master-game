@@ -11,7 +11,6 @@ function play() {
 
 
 
-
 // utility file 
 function continueGame() {
     // step-1: generate a random alphabet
@@ -26,3 +25,9 @@ function continueGame() {
 }
 
 
+
+// keyboard events
+function handleKeyboardButtonPress(){
+    console.log('buttonPress')
+}
+document.addEventListener('keyup', handleKeyboardButtonPress)
