@@ -45,7 +45,7 @@
 @media screen and (min-width: 1000px) {
     
     .play-ground {
-        height: 100vh;
+        height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
