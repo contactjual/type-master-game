@@ -8,6 +8,7 @@ function showElementById(elementId) {
     homeScreen.classList.remove('hidden');
 }
 
+
 function getARandomAlphabet() {
     // create an aphabet array
     const aphabetString = 'abcdefghijklmnopqrstuvwxyz';

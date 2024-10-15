@@ -2,6 +2,7 @@ function play() {
     hideElementById('home-screen');
     hideElementById('final-screen');
     showElementById('play-screen');
+    
 
     // reset score and life 
     setTextElementById('score', 0);
@@ -11,6 +12,10 @@ function play() {
 
     continueGame()
 };
+function goHome(){
+    const homeScreen = document.getElementById('home-screen');
+    homeScreen.classList.remove('hidden');
+}
 
 
 
@@ -36,7 +41,7 @@ function handleKeyboardButtonPress(event) {
     if(gamerPressed==='Escape'){
         gameOver();
     }
-
+ 
     // get the expected to press
     const currentAlphaElement = document.getElementById('current-apha');
     const currentAlpha = currentAlphaElement.innerText;
@@ -60,7 +65,7 @@ function handleKeyboardButtonPress(event) {
         continueGame();
     }
     else {
-    
+
         const currentLi = getTextElementValueById('life');
         const newLife = currentLi - 1;
         setTextElementById('life', newLife);
@@ -86,4 +91,5 @@ function handleKeyboardButtonPress(event) {
         }
     }
 }
-document.addEventListener('keyup', handleKeyboardButtonPress)
+document.addEventListener('keyup', handleKeyboardButtonPress);
+
