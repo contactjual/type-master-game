@@ -21,26 +21,41 @@ function getARandomAlphabet() {
     return alphabet;
 }
 
+function keyPress(KeyPressed) {
+    const element = document.getElementById(KeyPressed);
+    element.classList.add('scale-75');
+    element.classList.add('skew-y-3');
+    element.classList.add('bg-yellow-700');
+}
+function keyUp(keyUped) {
+    const element = document.getElementById(keyUped);
+    element.classList.remove('scale-75');
+    element.classList.remove('skew-y-3');
+    element.classList.remove('bg-yellow-700');
+}
+
 function setBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('bg-orange-400');
 }
-function setOtherBackgroundColorById(elementId) {
-    const element = document.getElementById(elementId);
-    element.classList.add('bg-red-700');
-}
-
 function removeBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400');
+    // element.classList.remove('skew-y-3');
+}
+function setOtherBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-red-700');
+    element.classList.add('animate-spin');
 }
 function resetOtherColorKeyByCls(elementClass) {
     const elementByClass = document.getElementsByClassName(elementClass);
     // for (let key of elementByClass) {
     //     key.classList.remove('bg-red-700');
     // }
-    for(let i=0; i<elementByClass.length; i++){
-        elementByClass[i].classList.remove('bg-red-700')
+    for (let i = 0; i < elementByClass.length; i++) {
+        elementByClass[i].classList.remove('bg-red-700');
+        elementByClass[i].classList.remove('animate-spin');
     }
 }
 

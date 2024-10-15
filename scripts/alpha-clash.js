@@ -32,7 +32,7 @@ function continueGame() {
     setBackgroundColorById(alphabet);
 
 }
-
+ 
 
 
 // keyboard events
@@ -54,14 +54,14 @@ function handleKeyboardButtonPress(event) {
         const newScore = currentSco + 1;
         setTextElementById('score', newScore);
 
- 
+
         // -----------------------------------------
         // update score
         // const currentScoreElement = document.getElementById('score');
         // const currentScore = currentScoreElement.innerText;
         // const currentScoreNum = parseInt(currentScore);
         // currentScoreElement.innerText = newScore;
-        resetOtherColorKeyByCls('kbd');  
+        resetOtherColorKeyByCls('kbd');
         removeBackgroundColorById(currentAlpha);
         continueGame();
     }
@@ -93,6 +93,15 @@ function handleKeyboardButtonPress(event) {
             // finalScreen.classList.remove('hidden');
         }
     }
+    
 }
 document.addEventListener('keyup', handleKeyboardButtonPress);
 
+document.addEventListener('keypress', function(event){
+    const gamerPressed = event.key;
+    keyPress(gamerPressed);
+})
+document.addEventListener('keyup', function(event){
+    const gamerPressed = event.key;
+    keyUp(gamerPressed);
+})
