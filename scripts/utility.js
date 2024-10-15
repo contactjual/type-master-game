@@ -34,14 +34,13 @@ function removeBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400');
 }
-// function removeOtherBackgroundColorById(elementId) {
-//     const element = document.getElementById(elementId);
-//     element.classList.remove('bg-red-700');
-// }
 function resetOtherColorKeyByCls(elementClass) {
     const elementByClass = document.getElementsByClassName(elementClass);
-    for (const key of elementByClass) {
-        key.classList.remove('bg-red-700');
+    // for (let key of elementByClass) {
+    //     key.classList.remove('bg-red-700');
+    // }
+    for(let i=0; i<elementByClass.length; i++){
+        elementByClass[i].classList.remove('bg-red-700')
     }
 }
 
@@ -76,5 +75,6 @@ function gameOver() {
 
     // clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById("current-apha");
+    resetOtherColorKeyByCls('kbd');
     removeBackgroundColorById(currentAlphabet);
 }

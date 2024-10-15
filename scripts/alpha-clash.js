@@ -31,7 +31,6 @@ function continueGame() {
     // set baground color
     setBackgroundColorById(alphabet);
 
-
 }
 
 
@@ -81,7 +80,7 @@ function handleKeyboardButtonPress(event) {
         // const currentLifeNum = parseInt(currentLife);
         // currentLifeElement.innerText = newLife;
 
-        if (newLife === 0) {
+        if (newLife <= 0) {
 
             gameOver();
 
