@@ -31,11 +31,7 @@ function continueGame() {
     // set baground color
     setBackgroundColorById(alphabet);
 
-    document.addEventListener('keyup', function (event) {
-        const gamerPressed = event.key;
-        setOtherBackgroundColorById(gamerPressed);
-        // removeOtherBackgroundColorById(gamerPressed); 
-    })
+
 }
 
 
@@ -59,20 +55,20 @@ function handleKeyboardButtonPress(event) {
         const newScore = currentSco + 1;
         setTextElementById('score', newScore);
 
-
+ 
         // -----------------------------------------
         // update score
         // const currentScoreElement = document.getElementById('score');
         // const currentScore = currentScoreElement.innerText;
         // const currentScoreNum = parseInt(currentScore);
         // currentScoreElement.innerText = newScore;
-        removeOtherBackgroundColorById(gamerPressed); 
+        resetOtherColorKeyByCls('kbd');  
         removeBackgroundColorById(currentAlpha);
         continueGame();
     }
     else {
 
-        // setOtherBackgroundColorById(gamerPressed);
+        setOtherBackgroundColorById(gamerPressed);
 
         const currentLi = getTextElementValueById('life');
         const newLife = currentLi - 1;

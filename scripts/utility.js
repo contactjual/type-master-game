@@ -34,12 +34,18 @@ function removeBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400');
 }
-function removeOtherBackgroundColorById(elementId) {
-    const element = document.getElementById(elementId);
-    element.classList.remove('bg-red-700');
+// function removeOtherBackgroundColorById(elementId) {
+//     const element = document.getElementById(elementId);
+//     element.classList.remove('bg-red-700');
+// }
+function resetOtherColorKeyByCls(elementClass) {
+    const elementByClass = document.getElementsByClassName(elementClass);
+    for (const key of elementByClass) {
+        key.classList.remove('bg-red-700');
+    }
 }
 
-function getTextElementValueById(elementId){
+function getTextElementValueById(elementId) {
     const currentScoreElement = document.getElementById(elementId);
     const currentScore = currentScoreElement.innerText;
     const currentScoreNum = parseInt(currentScore);
@@ -51,7 +57,7 @@ function setTextElementById(elementId, value) {
     element.innerText = value;
 }
 
-function getElementTextById(elementId){
+function getElementTextById(elementId) {
     const element = document.getElementById(elementId);
     const text = element.innerText;
     return text;
