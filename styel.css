@@ -10,3 +10,44 @@
 .anton-regular {
     font-family: "Anton", sans-serif;
 }
+
+
+
+
+/* play-ground style */
+
+.play-ground {
+    max-width: 1020px;
+    margin: auto;
+}
+
+.playground-display {
+    margin: auto;
+}
+
+.keyboard-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.button-outer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    
+    .play-ground {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
