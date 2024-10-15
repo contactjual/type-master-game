@@ -2,19 +2,19 @@ function play() {
     hideElementById('home-screen');
     hideElementById('final-screen');
     showElementById('play-screen');
-    
+
 
     // reset score and life 
     setTextElementById('score', 0);
     setTextElementById('life', 5);
 
 
-
     continueGame()
 };
-function goHome(){
+function goHome() {
     const homeScreen = document.getElementById('home-screen');
     homeScreen.classList.remove('hidden');
+    hideElementById('final-screen');
 }
 
 
@@ -29,7 +29,13 @@ function continueGame() {
     currenAlpha.innerText = alphabet;
 
     // set baground color
-    setBackgroundColorById(alphabet)
+    setBackgroundColorById(alphabet);
+
+    document.addEventListener('keyup', function (event) {
+        const gamerPressed = event.key;
+        setOtherBackgroundColorById(gamerPressed);
+        // removeOtherBackgroundColorById(gamerPressed); 
+    })
 }
 
 
@@ -38,10 +44,10 @@ function continueGame() {
 function handleKeyboardButtonPress(event) {
     const gamerPressed = event.key;
 
-    if(gamerPressed==='Escape'){
+    if (gamerPressed === 'Escape') {
         gameOver();
     }
- 
+
     // get the expected to press
     const currentAlphaElement = document.getElementById('current-apha');
     const currentAlpha = currentAlphaElement.innerText;
@@ -60,11 +66,13 @@ function handleKeyboardButtonPress(event) {
         // const currentScore = currentScoreElement.innerText;
         // const currentScoreNum = parseInt(currentScore);
         // currentScoreElement.innerText = newScore;
-
+        removeOtherBackgroundColorById(gamerPressed); 
         removeBackgroundColorById(currentAlpha);
         continueGame();
     }
     else {
+
+        // setOtherBackgroundColorById(gamerPressed);
 
         const currentLi = getTextElementValueById('life');
         const newLife = currentLi - 1;

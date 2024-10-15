@@ -25,10 +25,18 @@ function setBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('bg-orange-400');
 }
+function setOtherBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-red-700');
+}
 
 function removeBackgroundColorById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400');
+}
+function removeOtherBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-red-700');
 }
 
 function getTextElementValueById(elementId){
