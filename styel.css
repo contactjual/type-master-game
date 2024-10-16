@@ -35,6 +35,11 @@
     justify-content: space-between;
 }
 
+.screen-outer-p{
+    display: none;
+    margin-bottom: 20px;
+}
+
 
 
 
