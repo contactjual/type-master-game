@@ -1,38 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light"> 
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- font-awosome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- daisy UI and tailind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- custom css -->
     <link rel="stylesheet" href="styel.css">
+    
 </head>
 
 <body class="poppins-thin">
     <main class="bg-[#010313] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center">
         <!-- home screen start -->
-        <!-- <section id="home-screen" class="home min-h-screen text-white flex justify-center items-center">
+        <section id="home-screen" class="home min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col items-center gap-y-10">
-                <h1 class="text-8xl anton-regular uppercase">Alpha Clash Pro</h1>
-                <p>Unleash Your Keyboard Kun g Fu : Press 'Enter' to play</p>
-                <button onclick="play()" class="btn bg-white text-black">Play Now</button>
+                <h1 class="sm:text-8xl text-7xl text-center anton-regular uppercase">Alpha <span class="text-red-400 " >Clash</span> Pro</h1>
+                <p class="text-center">Click or Tap on <span class="text-red-400 font-bold">'Play Now'</span> button to start</p>
+                <button onclick="play()" class="btn bg-white text-black hover:text-red-400">Play Now</button>
             </div>
-        </section> -->
+        </section>
         <!-- home screen end -->
         <!-- play-ground start-->
-        <section id="play-screen" class="play-ground">
+        <section id="play-screen" class="play-ground hidden">
             <div class="play-ground-inner">
                 <!-- screen -->
-                <div class="playground-display artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
+                <div
+                    class="playground-display artboard artboard-horizontal border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
                     <div class="flex justify-center">
-                        <p class="bg-[#2F2941] px-6 pb-4 rounded-b-xl text-white">Don't watch Keyboard while playing... Press 'Esc' to exit.
+                        <p class="bg-[#2F2941] px-6 pb-4 rounded-b-xl text-white">Don't watch Keyboard while playing...
+                            Press 'Esc' to exit.
                         </p>
                     </div>
                     <div class="flex justify-center h-full items-center">
@@ -42,7 +47,7 @@
                 <!-- Keyboard start -->
                 <div class="keyboard-outer">
                     <div class="keyboard-inner">
-                        <div class="my-1 flex w-full justify-center gap-1">
+                        <div class="key-bo my-1 flex w-full justify-center gap-1">
                             <kbd id="q" class="kbd">q</kbd>
                             <kbd id="w" class="kbd">w</kbd>
                             <kbd id="e" class="kbd">e</kbd>
@@ -54,7 +59,7 @@
                             <kbd id="o" class="kbd">o</kbd>
                             <kbd id="p" class="kbd">p</kbd>
                         </div>
-                        <div class="my-1 flex w-full justify-center gap-1">
+                        <div class="key-bo my-1 flex w-full justify-center gap-1">
                             <kbd id="a" class="kbd">a</kbd>
                             <kbd id="s" class="kbd">s</kbd>
                             <kbd id="d" class="kbd">d</kbd>
@@ -65,7 +70,7 @@
                             <kbd id="k" class="kbd">k</kbd>
                             <kbd id="l" class="kbd">l</kbd>
                         </div>
-                        <div class="my-1 flex w-full justify-center gap-1">
+                        <div class="key-bo my-1 flex w-full justify-center gap-1">
                             <kbd id="z" class="kbd">z</kbd>
                             <kbd id="x" class="kbd">x</kbd>
                             <kbd id="c" class="kbd">c</kbd>
@@ -82,34 +87,36 @@
                 <div class="button-outer">
                     <button class="btn rounded-full bg-purple-700 text-white px-4">
                         <span>Life</span>
-                        <i class="fa-solid fa-heart-pulse"></i>
+                        <i class="fa-solid fa-heart-pulse text-red-400"></i>
                         <span id="life">5</span>
                     </button>
                     <button class="btn rounded-full bg-purple-700 text-white px-4">
                         <span>Score</span>
-                        <i class="fa-solid fa-circle-check"></i>
+                        <i class="fa-solid fa-circle-check text-red-400"></i>
                         <span id="score">0</span>
                     </button>
                 </div>
             </div>
         </section>
         <!-- play-ground end-->
-         <!-- final score -->
-    <!--    <section id="final-screen" class="score flex justify-center items-center min-h-screen hidden">
+        <!-- final score -->
+        <section id="final-screen" class="score flex justify-center items-center min-h-screen hidden">
             <div class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg">
                 <h3 class="text-3xl">Game Over!</h3>
                 <h1 class="text-8xl ">
-                <span class="font-extrabold">Score:</span>
-                <span id="final-score">14</span>
-            </h1>
-                <button onclick="play()" class="btn">Play Again</button>
-                <button onclick="goHome()" class="btn">Go Home</button>
+                <span class="sm:text-8xl text-6xl ">
+                    <span class="font-extrabold">Score:</span>
+                    <span id="final-score">14</span>
+                </span>
+                </h1>
+                <button onclick="play()" class="btn hover:text-red-400">Play Again</button>
+                <button onclick="goHome()" class="btn hover:text-red-400">Go Home</button>
                 <p>Practice will make you a Pro</p>
             </div>
         </section>
     </main>
     <script src="scripts/alpha-clash.js"></script>
-    <script src="scripts/utility.js"></script> -->
+    <script src="scripts/utility.js"></script>
 </body>
 
 </html>

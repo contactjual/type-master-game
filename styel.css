@@ -14,14 +14,31 @@
 
 
 
-/* play-ground style */
+/* home screen style ------------------------------------------------------------------------------------- */
 
-.play-ground {
-    max-width: 1020px;
-    margin: auto;
+/* mobile  */
+@media screen and (max-width: 700px) {
+
 }
 
-.playground-display {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* play-ground style ------------------------------------------------------------------------------- */
+
+.play-ground {
+    /* max-width: 1020px; */
+    width: 100%;
     margin: auto;
 }
 
@@ -41,13 +58,61 @@
 
 
 
-
-@media screen and (min-width: 1000px) {
-    
+/* large screen */
+@media screen and (min-width: 1400px) {
     .play-ground {
         height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .playground-display{
+        width: 1000px;
+        height: 400px;
+        margin: auto;
+    }
+    .my-1 {
+        font-size: 23px;
+    }
+}
+
+
+/* laptop */
+@media screen and (min-width: 1040px) and (max-width:1400px) {
+    .play-ground {
+        display: flex;
+        justify-content: center;
+    }
+
+    .playground-display{
+        width: 1000px;
+        height: 50vh;
+        margin: auto;
+    }
+}
+
+
+/* tablate */
+@media screen and (max-width:1040px) {
+    .play-ground {
+        width: 80%;
+    }
+    .playground-display{
+        width: 100%;
+        height: 300px;
+        min-height: auto;
+        margin: auto;
+    }
+}
+
+
+
+/* mobile  */
+@media screen and (max-width: 405px) {
+    .play-ground {
+        width: 100%;
+    }
+    .my-1 {
+        font-size: 10px;
     }
 }
