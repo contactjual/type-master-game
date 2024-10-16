@@ -89,12 +89,12 @@
 
 
 /* mobile  */
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 450px) {
     .play-ground {
         width: 100%;
     }
     .my-1 {
-        font-size: 12px;
+        font-size: 3.5vw;
     }
     .screen-inner-p {
         display: none;
